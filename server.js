@@ -19,7 +19,7 @@ var server = http.createServer(function(request, response){
 
   console.log('请输入您请求的HTTP 路径\n' + path)
   if (path == "/"){
-    response.setHeader("context-Type", "text/html", "charset=utf-8")
+    response.setHeader("Context-Type", "text/html", "charset=utf-8")
     response.write('<!DOCTYPE>\n<html>'  + 
     '<head><link rel="stylesheet" href="/style.js">' +
     '</head><body>'  +
@@ -27,11 +27,11 @@ var server = http.createServer(function(request, response){
     '<script src="/script.html"></script>' +
     '</body></html>');
     response.end();
-  }else if(path == '/script.html'){
+  }else if(path == '/main.js'){
     response.setHeader('Content-Type', 'text/javascript; charset=utf-8')
     response.write('alert("这是JS执行的")')
     response.end()
-  }else if(path == '/style.js'){
+  }else if(path == '/style.css'){
     response.setHeader('Content-Type', 'text/css; charset=utf-8')
     response.write('body{background-color: #ddd;}h1{color: red;}')
     response.end()
